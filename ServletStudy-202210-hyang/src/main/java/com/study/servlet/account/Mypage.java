@@ -1,4 +1,4 @@
-package com.study.servlet.session;
+package com.study.servlet.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,19 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/session/1")
-public class Session1 extends HttpServlet {
+@WebServlet("/mypage")
+public class Mypage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
+   
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/form1.html").forward(request, response);
-		
+		request.getRequestDispatcher("/WEB-INF/account/mypage.html").forward(request, response);
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-	}
-
 }

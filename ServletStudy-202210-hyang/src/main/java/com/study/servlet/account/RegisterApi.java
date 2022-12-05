@@ -37,13 +37,14 @@ public class RegisterApi extends HttpServlet {
 				.password(registerParams.get("password"))
 				.name(registerParams.get("name"))
 				.email(registerParams.get("email"))
+				.roles("ROLE_USER, ROLE_ADMIN") // => user권한을 갖고있다 라는 의미
 				.build();
 		
 		accountService.register(user);
 		
 		UserRepository.getInstance().showUserAll();
 		
-		response.sendRedirect("/login");
+		response.sendRedirect("/login"); // 강제로 요청 날린다.
 	}
 
 }
