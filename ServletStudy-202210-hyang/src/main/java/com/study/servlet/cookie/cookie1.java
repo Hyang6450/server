@@ -11,21 +11,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet implementation class cookie1
+ */
 @WebServlet("/cookie/1")
-public class Cookie1 extends HttpServlet {
+public class cookie1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Cookie cookie = new Cookie("data1", "쿠키저장!!");
 		cookie.setMaxAge(60 * 60);
 		
-		Cookie cookie2 = new Cookie("data2", URLEncoder.encode("데이터 하나 더 추가!", StandardCharsets.UTF_8));
+		Cookie cookie2 = new Cookie("data2", URLEncoder.encode("데이터 하나더 추가!", StandardCharsets.UTF_8));
 		cookie2.setMaxAge(60 * 60);
 		
 		response.addCookie(cookie);
 		response.addCookie(cookie2);
-		
 	}
+
 }
